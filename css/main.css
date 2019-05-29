@@ -1,0 +1,314 @@
+@-ms-viewport {
+  width: device-width;
+}
+
+body {
+  -ms-overflow-style: scrollbar;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* --- default font sizes and styles for whole page, increase some of it for small devices */
+body, input, select, textarea {
+  font-size: 13pt;
+  font-weight: 300;
+  line-height: 1.65;
+  font-family: 'Roboto',Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Coda',Arial, Helvetica, cursive;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0 0 1em 0;
+  text-align: center;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+small {
+  font-size: 12pt;
+  opacity: 0.5;
+}
+
+/* Navbar - desktop */
+.navbar {
+  list-style: none;
+  font-family: 'Montserrat', sans-serif;
+  text-rendering: optimizeLegibility;
+  width: 100%;
+  height: 90px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #E25D33;
+}
+
+.navbar > ul {
+  margin-left: 90px;
+  margin-top: 20px;
+  margin-right: 5px;
+  list-style: none;
+}
+
+.navbar > ul > li {
+  float: left;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Coda',Arial, Helvetica, cursive;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.navbar > ul > li > a {
+  color: #DCD8CF;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 16px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  -webkit-transition: border-bottom-style;
+  transition: border-bottom-style;
+}
+
+.navbar > ul > li > a:hover {
+  color: #FFFFFF;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #FFFFFF;
+}
+
+.barcontainer {
+  display: none;
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  right: 50px;
+  top: 20px;
+}
+
+.bar1, .bar2, .bar3 {
+  width: 38px;
+  height: 5px;
+  background-color: #dedede;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
+}
+
+.lang {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0px;
+}
+
+.lang:hover {
+  background-color: #ededed3b;
+  color: black;
+}
+
+.lang > option {
+  background-color: #E25D33;
+  color: white;
+}
+
+.lang > img {
+  height: 16px;
+  width: 28px;
+}
+
+.logo {
+  float: left;
+  position: absolute;
+  left: 20px;
+  opacity: 0;
+}
+
+section {
+  padding: 20px;
+}
+
+.grid-3c {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+.competences {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+@media (max-width: 800px) {
+  .grid-3c {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+
+.mobilenav {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+select {
+  margin: 25px;
+  margin-top: 29px;
+  width: 120px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 0px solid #ccc;
+  color: white;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(../images/HunFlag.png) 96%/15% no-repeat #E25D33;
+}
+
+/* CAUTION: IE hackery ahead */
+select::-ms-expand {
+  display: none;
+  /* remove default arrow in IE 10 and 11 */
+}
+
+@media screen and (min-width: 0\0) {
+  select {
+    background: none\9;
+    padding: 5px\9;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .big {
+    display: none;
+  }
+  .small {
+    display: block;
+  }
+  .navbar > ul > li {
+    display: none;
+  }
+  .navbtn {
+    display: inline;
+  }
+  .lang {
+    display: none;
+  }
+  .mobilenav {
+    display: block;
+    height: 0;
+    padding-left: 20px;
+    padding-top: 5px;
+    background: #346889;
+    /* Old browsers */
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    background: -webkit-gradient(linear, left top, right top, color-stop(1%, #346889), to(#033d4d));
+    background: linear-gradient(90deg, #346889 1%, #033d4d 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#346889', endColorstr='#033d4d',GradientType=1 );
+    /* IE6-9 fallback on horizontal gradient */
+    -webkit-transition: height 2s -webkit-transform 2s;
+    -webkit-transition: height 2s transform 2s;
+    transition: height 2s transform 2s;
+  }
+  .grow {
+    height: 130px;
+  }
+  .mobilenav.hidden {
+    display: none;
+  }
+  .mobilenav > ul > li {
+    font-family: 'Coda',Arial, Helvetica, cursive;
+    color: whitesmoke;
+  }
+  .mobilenav > ul > li > a {
+    text-decoration: none;
+    font-family: 'Coda',Arial, Helvetica, cursive;
+    color: whitesmoke;
+  }
+  .mobilenav > ul > li > a:hover {
+    color: white;
+    font-weight: 600;
+  }
+  .barcontainer {
+    display: block;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .navbtn {
+    display: inline;
+    right: 10px;
+  }
+}
+
+.title {
+  font-weight: 100;
+  height: 35px;
+  padding-top: 5px;
+  background: #003244;
+  display: block;
+  margin: 0;
+  font-size: 16px;
+  color: whitesmoke;
+  letter-spacing: 2px;
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */
